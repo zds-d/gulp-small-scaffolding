@@ -1,0 +1,10 @@
+.DS_Store
+node_modules
+
+# project files
+/dist
+/src/rev
+
+# Visual Studio Code
+.vscode/
+.vscode/*

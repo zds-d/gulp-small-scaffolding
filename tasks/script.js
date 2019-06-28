@@ -63,8 +63,8 @@ function scriptDev(cb) {
     cb();
 }
 
-function scriptProd(cb) {
-    src([jsOpt.revOutPath + '*.json', jsOpt.inPath])
+function scriptProd() {
+    return src([jsOpt.revOutPath + '*.json', jsOpt.inPath])
         .pipe(revCollector({
             replaceReved: true
         }))
@@ -84,7 +84,6 @@ function scriptProd(cb) {
         //生成哈希文件名和原文件名对应的manifest文件
         .pipe(rev.manifest(revOpt.manifestOpt))
         .pipe(dest(jsOpt.revOutPath))
-    cb();
 }
 
 

@@ -54,8 +54,8 @@ function imageDev(cb) {
     cb();
 }
 
-function imageProd(cb) {
-    src(imgOpt.inPath, {
+function imageProd() {
+    return src(imgOpt.inPath, {
             since: lastRun(imageProd)
         })
         .pipe(imagemin(imgOpt.imageminOPt))
@@ -67,7 +67,6 @@ function imageProd(cb) {
         //生成哈希文件名和原文件名对应的manifest文件
         .pipe(rev.manifest(revOpt.manifestOpt))
         .pipe(dest(imgOpt.revOutPath))
-    cb();
 }
 
 

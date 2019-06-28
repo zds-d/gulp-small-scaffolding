@@ -50,8 +50,8 @@ function styleDev(cb) {
     cb();
 }
 
-function styleProd(cb) {
-    src([cssOpt.revOutPath + '*.json', cssOpt.inPath])
+function styleProd() {
+    return src([cssOpt.revOutPath + '*.json', cssOpt.inPath])
         .pipe(revCollector({
             replaceReved: true
         }))
@@ -68,7 +68,6 @@ function styleProd(cb) {
         //生成哈希文件名和原文件名对应的manifest文件
         .pipe(rev.manifest(revOpt.manifestOpt))
         .pipe(dest(cssOpt.revOutPath))
-    cb();
 }
 
 

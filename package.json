@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:dev": "gulp rev",
-    "build:prod": "gulp prod && gulp prod"
+    "build:prod": "gulp prod"
   },
   "keywords": [],
   "author": "",
